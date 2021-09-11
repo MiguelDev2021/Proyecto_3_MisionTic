@@ -1,0 +1,42 @@
+header{
+    background-color: #005c00;
+    height: 150px;
+}
+
+/*  diseño del logo de la empresa */
+#Logo_empresa{
+    margin: 10px 0px;    
+    height: 130px;
+    width: 200px;
+}
+
+.Logo_empresa{
+    text-align: left;
+}
+
+#logo_iniciar_sesion{
+    text-align: right;
+}
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/* diseño del aside*/
+#contenedor_contenido_catergorias{
+ margin: 50px 10px;
+
+
+}
+
+.ofertas{
+    margin: 50px 10px;
+}
+
+#contenedor_ofertas{
+    display: flex;
+}
+
+.estilo_ofertas{
+    width: 18rem;
+    margin: 50px 10px;
+    border: 1px solid #dfdfdf;
+    border-radius: 4px;
+}

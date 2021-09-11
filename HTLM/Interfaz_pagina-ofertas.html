@@ -1,38 +1,111 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link href="../CSS/Diseño_Pagina-ofertas.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <title>Pagina Ofertas</title>
 </head>
-<div class="container-fluid">
-    <header>
 
-       <img src="" alt=""> 
-        
-    </header>
-</div>
-<body> 
-    
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <a href="../HTLM/Interfaz_pagina-ofertas.html"><img src="../CSS/Logo_empresa.png" alt="logo_default"
+                        id="Logo_empresa"></a>
+            </div>
+            <div class="col" id="logo_iniciar_sesion">
+                <a href="../HTLM/Interfaz_pagina-ofertas.html"><img src="../CSS/Logo_empresa.png"
+                        alt="logo_inicio_sesion" id="Logo_empresa"></a>
+            </div>
+        </div>
 
-    <div> 
-        <nav>
-
-        </nav>
     </div>
+</header>
 
-    <div>
-        <section>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2" id="contenedor_contenido_catergorias">
+                <nav id="navbar-categorias" class="navbar navbar-light bg-light flex-column align-items-stretch p-3">
+                    <a class="navbar-brand" href="#">Categorias</a>
+                    <nav class="nav nav-pills flex-column">
+                        <a class="nav-link" href="#item-1">PAPA</a>
+                        <nav class="nav nav-pills flex-column">
+                            <a class="nav-link ms-3 my-1" href="#item-1-1">Papa Pastusa</a>
+                            <a class="nav-link ms-3 my-1" href="#item-1-2">Papa Criolla</a>
+                        </nav>
+                        <a class="nav-link" href="#item-2">Tomate</a>
+                        <nav class="nav nav-pills flex-column" href="">
+                            <a class="nav-link ms-3 my-1" href="#item-1-1">Tomate Cherry</a>
+                            <a class="nav-link ms-3 my-1" href="#item-1-2">Tomate Redondo</a>
 
-
-        </section>
-    </div>
+                        </nav>
+                        <a class="nav-link" href="#item-3">Cebolla</a>
+                        <nav class="nav nav-pills flex-column">
+                            <a class="nav-link ms-3 my-1" href="#item-3-1">Cebolla Larga</a>
+                            <a class="nav-link ms-3 my-1" href="#item-3-2">Cebolla Cabezona</a>
+                        </nav>
+                    </nav>
+                </nav>
+            </div>
+            <div class="col-sm-9">
+                <div id="contenedor_ofertas">
+                    <div class="estilo_ofertas_etiqueta" >
+                        <img src="..." class="card-img-top" alt="...">
+                        <div>
+                            <h5 >Card title</h5>
+                            <p >Some quick example text to build on the card title and make up the bulk
+                                of
+                                the
+                                card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                    <div class="card ofertas" style="width: 18rem;">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the
+                                card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                    <div class="card ofertas" style="width: 18rem;">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the
+                                card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                    <div class="card ofertas" style="width: 18rem;">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of
+                                the
+                                card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 </body>
 <footer>
 
 
 </footer>
+
 </html>
