@@ -30,13 +30,21 @@ header{
     margin: 50px 10px;
 }
 
-#contenedor_ofertas{
-    display: flex;
-}
 
-.estilo_ofertas{
-    width: 18rem;
+
+.estilo_ofertas_etiqueta{
+    height: 250px;
+    width: 350px;
     margin: 50px 10px;
     border: 1px solid #dfdfdf;
     border-radius: 4px;
+}
+
+.estilo_contenido{
+    padding: 25px;
+
+}
+.espacio_ofertas{
+    display: flex;
+    flex-direction: row;
 }
