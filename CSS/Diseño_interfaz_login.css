@@ -1,0 +1,13 @@
+#boton_color{
+ background-color: #4ea93b;
+ 
+
+}
+
+#contenedor_formulario{
+margin-top:  200px;    
+height: 400px ;
+ width:  600px; 
+border: 1px solid grey;
+border-radius: 5px;
+}
