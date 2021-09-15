@@ -1,13 +1,20 @@
-#boton_color{
- background-color: #4ea93b;
- 
+
+body{
+  
 
 }
 
-#contenedor_formulario{
-margin-top:  200px;    
-height: 400px ;
- width:  600px; 
-border: 1px solid grey;
-border-radius: 5px;
+#contenedor-formulario{
+margin: 50px auto 0px auto ;    
+height: 500px;
+width: 500px;
+
+
+}
+
+
+#boton-ingresar{
+
+    background-color:
+
 }
