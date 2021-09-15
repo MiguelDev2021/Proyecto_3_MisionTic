@@ -1,11 +1,14 @@
 h1{
     text-align: center;
-    font-size: 60px;
+    font-size: 65px;
     font-family: 'Courier New', Courier, monospace;
-    color: #007000
+    color: #038603
 }
 #lema{
-    text-align: center;
+    text-align:center;
+    margin: 0.5px 350px;
+    background-color: #b5b5b5;
+    font-style:italic;
     font-size: 25px;
     font-family: 'Courier New', Courier, monospace;
     color:black
@@ -13,9 +16,54 @@ h1{
 h3{
     color: #005200;
 }
-#descripcion{
-    text-align: center;
-    font-family:'Courier New', Courier, monospace;
-    font-size: 50px;
+
+#fondo{
+    background-image: url("https://1.bp.blogspot.com/-Y2TBmGkP1Qk/VgBv9G8EiuI/AAAAAAAAA-A/EuaExDn7iXUK3tQrvTWbLsXgtHalgbf8ACPcBGAYYCw/s1600/302.jpg");
     
+}
+
+#descripcion{
+    
+    margin-left: 40px;
+    margin-right: 35px;
+    text-align:center;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 45px;
+    color:white;
+}
+#distribuidor{
+    display: block;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: left;
+    float:left;
+    left: 200px;
+}
+#productor{
+    position: relative;
+    display: block;
+    left: 10%;
+    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: left;
+    float: left;
+    
+    
+    
+}
+#seleccion{
+    font-size: 25px;
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+.boton{
+    background-color: #038603;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px 15px;
+    border-radius:20%;
+    }
+#boton2{
+    position: relative;
+    left: 15%;
 }
