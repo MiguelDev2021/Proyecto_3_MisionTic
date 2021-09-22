@@ -19,15 +19,20 @@
       <v-spacer></v-spacer>
 
       <v-btn icon>
-        <v-icon x-large>mdi-home </v-icon>
+        <v-icon large>mdi-magnify </v-icon>
       </v-btn>
 
       <v-btn icon>
-        <v-icon x-large></v-icon>
+        <v-icon large>mdi-account</v-icon>
       </v-btn>
 
       <v-btn icon>
-        <v-icon> mdi-account </v-icon>
+        <v-icon large>mdi-home  </v-icon>
+      </v-btn>
+
+
+      <v-btn icon>
+        <v-icon large>mdi-cart-outline  </v-icon>
       </v-btn>
     </v-app-bar>
     
@@ -41,60 +46,55 @@
       </v-container>
     </v-main>
 
-     <v-footer app flat tile class="indigo lighten-1 white--text text-center">
-      <v-card flat tile class="indigo lighten-1 white--text text-center">
-        <v-card-text>
-          <v-btn
-            v-for="icon in icons"
-            :key="icon"
-            class="mx-4 white--text"
-            icon
-          >
-            <v-icon size="24px">
-              {{ icon }}
-            </v-icon>
-          </v-btn>
-        </v-card-text>
+    <v-footer 
+    dark
+    padless
+  >
+    <v-card
+      
+      class="flex"
+      flat
+      tile
+    >
+      <v-card-title class="teal">
+        <strong class="subheading">Conectacta con nosotros en redes sociales!</strong>
 
-        <v-card-text class="white--text pt-0">
-          Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet.
-          Mauris cursus commodo interdum. Praesent ut risus eget metus luctus
-          accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim
-          a sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula
+        <v-spacer></v-spacer>
 
-        </v-card-text>
+        <v-btn
+          v-for="icon in icons"
+          :key="icon"
+          class="mx-4"
+          dark
+          icon
+        >
+          <v-icon size="24px">
+            {{ icon }}
+          </v-icon>
+        </v-btn>
+      </v-card-title>
 
-        <v-divider></v-divider>
-
-        <v-card-text class="white--text">
-          {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
-        </v-card-text>
-      </v-card>
-    </v-footer>
-   
+      <v-card-text class="py-2 white--text text-center">
+        {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
+      </v-card-text>
+    </v-card>
+  </v-footer>
+  
   </v-app>
 </template>
 
 <script>
-
-
-export default {
-
-
-
-  data() {
-    return {
-      Title: "Pagina De Ventas",
-        icons: [
-        
+  export default {
+    data: () => ({
+      icons: [
         'mdi-facebook',
         'mdi-twitter',
         'mdi-linkedin',
         'mdi-instagram',
-
       ],
+      
+    }),
+  }
 
-    };
-  },
-};
+
 </script>
