@@ -33,7 +33,7 @@
 
 <v-divider></v-divider>
   <v-container id="contedor-registrese">
-  <p>¿No tienes cuenta?</p><a href=""> Regitrate</a>
+  <p>¿No tienes cuenta?</p><router-link to="/register"> Regitrate</router-link>
   </v-container>
      </v-container>
    </v-form>
@@ -45,6 +45,14 @@ export default {
   created() {
     this.$store.commit("SET_LAYOUT", "Interfaz_default");
   },
+  
+  methods :{
+
+    GoRegister(){
+
+    }
+  }
+
 };
 </script>
 

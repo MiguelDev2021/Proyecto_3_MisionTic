@@ -50,8 +50,25 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/Descripcion_oferta.vue')
+  },
+  {
+    path: '/proveedor',
+    name: 'Proveedor',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/Provedores.vue')
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/Register_user.vue')
   }
 ]
+
 
 const router = new VueRouter({
   mode: 'history',

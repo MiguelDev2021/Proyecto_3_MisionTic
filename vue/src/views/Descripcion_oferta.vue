@@ -50,10 +50,7 @@
   color = "green accent-3"
 > ¡RESERVAR YA!</v-btn>
 
- 
 
-  </v-container>
-    <v-container>
 
   </v-container>
   </v-container>
@@ -94,6 +91,14 @@ export default {
 
 h2{
   margin-top: 20px;
+
+}
+
+h1{
+  text-align: left;
+  font-size: 2em;
+  color: black;
+  font-family: "Roboto", sans-serif;
 
 }
 
