@@ -4,7 +4,7 @@
   <v-app>
     <!-- esta el diseño del header -->
     <v-app-bar
-      color="green darken-3"
+      color="green accent-2"
       dark
       hide-on-scroll
       prominent
