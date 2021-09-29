@@ -31,7 +31,7 @@
       </v-btn>
 
 
-      <v-btn icon >
+      <v-btn icon to="proveedor">
         <v-icon large>mdi-cart-outline  </v-icon>
       </v-btn>
     </v-app-bar>

@@ -51,18 +51,16 @@
         <v-icon large>mdi-magnify </v-icon>
       </v-btn>
 
-      <v-btn icon>
+      <v-btn icon to="login" link>
         <v-icon large>mdi-account</v-icon>
       </v-btn>
 
-      <v-btn icon>
+      <v-btn icon to="home" link>
         <v-icon large>mdi-home  </v-icon>
       </v-btn>
 
 
-      <v-btn icon>
-        <v-icon large>mdi-cart-outline  </v-icon>
-      </v-btn>
+      
     <!-- -->
   </v-app-bar>
 

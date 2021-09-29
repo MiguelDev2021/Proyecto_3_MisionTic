@@ -1,6 +1,6 @@
 <template>
    <v-container>
-     <p id="texto-iniciar-sesion">INICIAR SECCION</p>
+     <p id="texto-iniciar-sesion">INICIAR SESION</p>
    <v-form>
      <v-container>
       <v-row>
@@ -33,7 +33,7 @@
 
 <v-divider></v-divider>
   <v-container id="contedor-registrese">
-  <p>¿No tienes cuenta?</p><router-link to="/register"> Regitrate</router-link>
+  <p>¿No tienes cuenta?</p><router-link to="/register"> Registrate</router-link>
   </v-container>
      </v-container>
    </v-form>
