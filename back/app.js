@@ -1,0 +1,14 @@
+require('dotenv').config()
+
+// configuracion del servidor
+const express = require("express")
+const cors = require("cors")
+
+const app = express();
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+
+const port = process.env.PORT
+app.listen(port, () => console.log(`servidor en http://localhost:${port}`));
+
