@@ -38,12 +38,18 @@
                 width="400" height="200" alt="Distribuidor">
         </div>
         <br><br>
+<<<<<<< HEAD:vue/src/views/Home.vue
         <v-btn id="boton-distribuidor"
         outlined
         rounded
          plain
          
         > Soy Distribuidor</v-btn>
+=======
+        <div class="caja-boton">
+            <router-link to:"Home.vue">Soy distribuidor</router-link><br><br>
+        </div>
+>>>>>>> miguel:front/vue/src/views/Home.vue
         <br>
     </div>
     <div id="productor">
@@ -89,6 +95,7 @@ export default {
 </script>
 
 <style>
+
 h1{
     text-align: center;
     font-size: 65px;
