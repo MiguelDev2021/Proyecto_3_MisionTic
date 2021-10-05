@@ -1,8 +1,8 @@
 <template>
   
-  <div>  
+  <v-container>  
    <br>
-    <div id="fondo">
+    <v-container  id="fondo">
         <H1><span>Bienvenidos a verduras S.A </span></H1>
         <div id="lema">
             <span>
@@ -18,7 +18,7 @@
                 ofrecerte.</p>
         </div>
         <br>
-    </div>
+    </v-container>
     <div id="seleccion">
         <p><b>Selecciona un usuario</b></p>
     </div>
@@ -38,9 +38,12 @@
                 width="400" height="200" alt="Distribuidor">
         </div>
         <br><br>
-        <div class="caja-boton">
-            <router-link to:"Home.vue">Soy distribuidor</router-link><br><br>
-        </div>
+        <v-btn id="boton-distribuidor"
+        outlined
+        rounded
+         plain
+         
+        > Soy Distribuidor</v-btn>
         <br>
     </div>
     <div id="productor">
@@ -63,7 +66,7 @@
         </div>
 
     </div>
-  </div>
+  </v-container>
 </template>
 
 
@@ -72,10 +75,17 @@
 
 export default {
 
+ 
   created () {
             this.$store.commit('SET_LAYOUT', 'Interfaz_default')
-        }
+        },
+
+    recargar_pagina(){
+        this.$router.reload();
+    }
+    
 }
+
 </script>
 
 <style>
@@ -136,7 +146,8 @@ h3{
     font-size: 25px;
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
-    
+    margin-left: auto;
+    margin-right: auto;
 }
 .boton{
     
@@ -156,6 +167,10 @@ h3{
 .imagen{
     text-align: center;
 }
-    
+
+#boton-distribuidor:hover{
+    background: #038603;
+    text-align: center;
+}
 
 </style>
