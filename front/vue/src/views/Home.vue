@@ -39,7 +39,7 @@
         </div>
         <br><br>
         <div class="caja-boton">
-            <a href="#" class="boton">Soy distribuidor</a><br><br>
+            <router-link to:"Home.vue">Soy distribuidor</router-link><br><br>
         </div>
         <br>
     </div>
@@ -79,6 +79,7 @@ export default {
 </script>
 
 <style>
+
 h1{
     text-align: center;
     font-size: 65px;
