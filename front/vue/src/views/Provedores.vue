@@ -1,36 +1,26 @@
 <template>
-  <!-- La barra categorias-->
-  <div>
-    <div>
-      <v-tabs fixed-tabs dark background-color="green lighten-3">
-        <v-tab>Item One</v-tab>
-        <v-tab>Item Two</v-tab>
-        <v-tab>Item Three</v-tab>
-      </v-tabs>
-    </div>
-    <v-container class="mt-3 px-0 py-0">
+<div>
+ <v-container><p>TUS OFERTAS</p></v-container>
+  <v-container class="mt-3 px-0 py-0">
       <v-row>
         <v-col v-for="ofert in oferts" :key="ofert.name">
           <ofert :ofert="ofert"/>
         </v-col>
       </v-row>
-      <v-btn
-  depressed
-  elevation="2"
-></v-btn>
+  
     </v-container>
-  </div>
-  <!-- Esta es la card para mostrar las ofertas -->
+</div>
 </template>
 
 <script>
 import ofert from "../components/ofert.vue";
 export default {
-  components: { ofert }, 
-   created () {
-            this.$store.commit('SET_LAYOUT', 'Interfaz_ventas_categorias')
+    components: { ofert }, 
+  created () {
+            this.$store.commit('SET_LAYOUT', 'Interfaz_Proveedor')
         },
-  data() {
+
+     data() {
     return {
       
       oferts : [
@@ -44,9 +34,11 @@ export default {
       
     };
   },
-
-};
+}
 </script>
 
 <style>
+.container{
+    text-align: center;
+}
 </style>
