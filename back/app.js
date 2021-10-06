@@ -12,7 +12,15 @@ app.use(express.urlencoded({extended: true}));
 //Agregar las ruta a escuchar
 app.use("/api", require("./routes/routes"));
 
+//configuracion con la base de datos
 
-const port = process.env.PORT
+const  moongose  = require("mongoose");
+moongose.connect(process.env.BD_URI)
+.then(() => console.log("conectado a la base datos"))
+.catch(err => console.error(err));
+
+
+
+const port = process.env.PORT;
 app.listen(port, () => console.log(`servidor en http://localhost:${port}`));
 

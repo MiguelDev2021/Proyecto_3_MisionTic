@@ -4,9 +4,8 @@ const ofertsController = require("../controllers/ofertsController");
 //rutas de ofertas
 
 router.get("/oferts", ofertsController.getAll);
-router.get("/oferts/:id", ofertsController.getById);
-router.get("/oferts/:id", ofertsController.Create);
-router.get("/oferts/:id", ofertsController.Read);
-router.get("/oferts/:id", ofertsController.Update);
-router.get("/oferts/:id", ofertsController.Delete);
+router.get("/oferts/:code", ofertsController.getById);
+router.post("/oferts", ofertsController.Create);
+router.put("/oferts/:code", ofertsController.Update);
+router.delete("/oferts/:code", ofertsController.Delete);
 module.exports = router;
