@@ -9,6 +9,10 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
+//Agregar las ruta a escuchar
+app.use("/api", require("./routes/routes"));
+
+
 const port = process.env.PORT
 app.listen(port, () => console.log(`servidor en http://localhost:${port}`));
 
