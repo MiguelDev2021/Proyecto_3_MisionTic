@@ -17,7 +17,7 @@
       src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
     ></v-img>
 
-    <v-card-title>{{ofert.name}}</v-card-title>
+    <v-card-title>{{ofert.nombre_oferta}}</v-card-title>
 
     <v-card-text>
       <v-row
@@ -42,7 +42,7 @@
         {{ofert.cantidad}}
       </div>
 
-      <div>{{ofert.descripcion}}</div>
+      <div>{{ofert.informacion}}</div>
     </v-card-text>
 
     <v-divider class="mx-4"></v-divider>

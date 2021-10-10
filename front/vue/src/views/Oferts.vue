@@ -10,14 +10,11 @@
     </div>
     <v-container class="mt-3 px-0 py-0">
       <v-row>
-        <v-col v-for="ofert in oferts" :key="ofert.name">
+        <v-col v-for="ofert in oferts" :key="ofert.code">
           <ofert :ofert="ofert"/>
         </v-col>
       </v-row>
-      <v-btn
-  depressed
-  elevation="2"
-></v-btn>
+     
     </v-container>
   </div>
   <!-- Esta es la card para mostrar las ofertas -->
@@ -25,6 +22,7 @@
 
 <script>
 import ofert from "../components/ofert.vue";
+import { getAllOferts } from "../services/oferts.services"
 export default {
   components: { ofert }, 
    created () {
@@ -32,19 +30,21 @@ export default {
         },
   data() {
     return {
-      
-      oferts : [
-        { id: 1,imagen_producto: " " ,name: "Ventas Papa", descripcion : ""  , cantidad : 1000},
-        { id: 1,imagen_producto: " " ,name: "Ventas Cebolla", descripcion : ""  , cantidad : 1000},
-        { id: 1,imagen_producto: " " ,name: "Ventas Tomate", descripcion  :""  , cantidad : 1000},
-        { id: 1,imagen_producto: " " ,name: "Ventas Cebolla", descripcion : ""  , cantidad : 1000},
-
-      ],
-
+      oferts : [],
+   
       
     };
   },
+  mounted(){
+    getAllOferts()
+    .then((response) =>{
+      this.oferts = response.data 
 
+    })
+    .catch((err) => console.error(err));
+
+
+  }
 };
 </script>
 
