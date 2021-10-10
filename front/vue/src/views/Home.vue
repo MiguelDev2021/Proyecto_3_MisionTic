@@ -38,12 +38,17 @@
                 width="400" height="200" alt="Distribuidor">
         </div>
         <br><br>
+        <center>
         <v-btn id="boton-distribuidor"
         outlined
         rounded
-         plain
+        plain
+        to ="/oferts" link
+
+         
          
         > Soy Distribuidor</v-btn>
+        </center>
         <br>
     </div>
     <div id="productor">
@@ -61,10 +66,16 @@
         </div>
         <br><br>
 
-        <div class="caja-boton">
-            <a href="#" class="boton"> Soy productor agricola</a>
-        </div>
-
+        <center>
+        <v-btn id="boton-distribuidor"
+        outlined
+        rounded
+        plain
+        to="/login" link
+         
+         
+        > Soy Productor Agricola</v-btn>
+        </center>
     </div>
   </v-container>
 </template>
