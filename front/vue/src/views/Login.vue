@@ -18,6 +18,7 @@
 
       
        <v-text-field mt-20
+            v-model="password"
             label="Contraseña"
           ></v-text-field>
       </v-col>
@@ -65,7 +66,7 @@ export default {
 }
 
 .container--fluid{
-    border: 1px solid rgb(233, 233, 233);
+    border: 4px solid rgb(233, 233, 233);
     margin-top: 200px;
     border-radius: 4px ;
 }

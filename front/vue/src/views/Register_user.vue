@@ -133,7 +133,7 @@ export default {
 }
 
 .container--fluid{
-    border: 1px solid rgb(233, 233, 233);
+    border: 2px solid rgb(214, 213, 213);
     margin-top: 100px;
     border-radius: 4px ;
 }

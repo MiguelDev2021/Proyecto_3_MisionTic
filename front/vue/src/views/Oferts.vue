@@ -3,9 +3,9 @@
   <div>
     <div>
       <v-tabs fixed-tabs dark background-color="green lighten-3">
-        <v-tab>Item One</v-tab>
-        <v-tab>Item Two</v-tab>
-        <v-tab>Item Three</v-tab>
+        <v-tab>PAPA</v-tab>
+        <v-tab>TOMATE</v-tab>
+        <v-tab>CEBOLLA</v-tab>
       </v-tabs>
     </div>
     <v-container class="mt-3 px-0 py-0">
