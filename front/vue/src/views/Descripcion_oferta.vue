@@ -11,7 +11,7 @@
   </v-carousel>
   </v-container>
   <v-container class="contenedor-descripcion">  
-  <h1>Nombre del producto</h1>
+  <h1>{{nombre_oferta}}</h1>
 
    <h2>cultivado por :</h2> <v-chip
       class="ma-2"
@@ -21,25 +21,25 @@
       <v-icon left>
         mdi-account-circle-outline
       </v-icon>
-      John Leider Pedraza
+        {{cultivador}}
     </v-chip>
 
     <h3>Cantidad Disponible:</h3>
-    <p> 4000 Libras </p>
+    <p> {{cantidad}} Libras </p>
 
     <h3>Fecha de Entrega:</h3>
-    <p> 10 de Diciembre 2020 </p> 
+    <p> {{fecha}}</p> 
 
     <h3> Categoria de cultivo: </h3>
      <v-chip
       class="ma-2"
       color="#64FFDA"
-      label
+ 
     >
       <v-icon left>
         mdi-flare
       </v-icon>
-        Categoria
+       {{categoria}}
     </v-chip>
 
     <v-divider></v-divider>
@@ -61,13 +61,40 @@
 </template>
 
 <script>
+  import { getOfert } from "../services/oferts.services"
+
 export default {
   created() {
-    this.$store.commit("SET_LAYOUT", "Interfaz_ventas_categorias");
+    this.$store.commit("SET_LAYOUT", "Interfaz_ventas_categorias"); 
+    console.log("el codigo a investigar "  + this.$route.params.code)
+    const code = this.$route.params.code ;
+    if( code != undefined){
+      getOfert(code)
+      .then((response) => {
+        const ofert = response.data;
+
+        this.nombre_oferta = ofert.nombre_oferta;
+        this.cantidad = ofert.cantidad;
+        this.fecha = ofert.fecha;
+        this.categoria = ofert.Categoria;
+
+      })
+
+    }
   },
 
   data() {
     return {
+
+      nombre_oferta : "",
+      cultivador : "",
+      cantidad : "",
+      fecha : "",
+      categoria: "",
+
+
+
+
       items: [
         {
           src: "https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg",

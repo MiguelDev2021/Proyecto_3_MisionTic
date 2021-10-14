@@ -26,7 +26,7 @@
         <v-icon large>mdi-account</v-icon>
       </v-btn>
 
-      <v-btn icon to="/home" link>
+      <v-btn icon to="/" link>
         <v-icon large>mdi-home  </v-icon>
       </v-btn>
 
