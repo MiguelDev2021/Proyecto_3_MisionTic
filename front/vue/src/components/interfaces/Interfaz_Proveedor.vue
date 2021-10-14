@@ -88,11 +88,8 @@ export default {
     items: [
       { title: "Mis Ofertas", icon: "mdi-ballot-outline", path: "/proveedor" },
       { title: "Nueva Oferta", icon: "mdi-flower", path: "/nuevaoferta" },
-      {
-        title: "Mi Perfil",
-        icon: "mdi-account-circle",
-        path: "/InformacionPersonal",
-      },
+      { title: "Mi Perfil", icon: "mdi-account-circle", path: "/miperfil" },
+  
     ],
   }),
 

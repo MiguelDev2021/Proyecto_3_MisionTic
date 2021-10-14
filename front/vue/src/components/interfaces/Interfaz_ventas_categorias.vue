@@ -62,14 +62,17 @@
         <v-spacer></v-spacer>
 
         <v-btn
-          v-for="icon in icons"
-          :key="icon"
+          v-for="accesos in icons"
+          :key="accesos.icon"
           class="mx-4"
           dark
           icon
+          target="_blank"
+          :href = accesos.direccionamiento 
+        
         >
           <v-icon size="24px">
-            {{ icon }}
+            {{ accesos.icon }}
           </v-icon>
         </v-btn>
       </v-card-title>
@@ -87,10 +90,10 @@
   export default {
     data: () => ({
       icons: [
-        'mdi-facebook',
-        'mdi-twitter',
-        'mdi-linkedin',
-        'mdi-instagram',
+        {icon : 'mdi-facebook', direccionamiento : "https://www.facebook.com" },
+        {icon : 'mdi-twitter',direccionamiento: "https://twitter.com" },
+        {icon : 'mdi-linkedin', direccionamiento: "https://co.linkedin.com"},
+        {icon : 'mdi-instagram',direccionamiento: "https://www.instagram.com" }
       ],
       
     }),
