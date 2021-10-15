@@ -14,15 +14,17 @@
           <ofert :ofert="ofert"/>
         </v-col>
       </v-row>
-     
     </v-container>
   </div>
   <!-- Esta es la card para mostrar las ofertas -->
 </template>
 
 <script>
+
 import ofert from "../components/ofert.vue";
 import { getAllOferts } from "../services/oferts.services"
+
+
 export default {
   components: { ofert }, 
    created () {
@@ -31,22 +33,38 @@ export default {
   data() {
     return {
       oferts : [],
-   
-      
+      tamaño : 0
+    
     };
+
   },
+   recargar_pagina(){
+        location.reload();
+    },
   mounted(){
+   
     getAllOferts()
     .then((response) =>{
       this.oferts = response.data 
+      
 
     })
     .catch((err) => console.error(err));
 
 
-  }
+  },
+
+  
+  
 };
+
+
 </script>
 
 <style>
+@media (min-width: 960px){
+.container {
+    display: block;
+}
+}
 </style>

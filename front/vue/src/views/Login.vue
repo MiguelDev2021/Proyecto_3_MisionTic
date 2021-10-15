@@ -13,6 +13,8 @@
 
      <v-text-field class="mt-10"
             label="Correo Electronico"
+            v-model="correo"
+            :rules ="rules.mail"
           ></v-text-field>
   
 
@@ -20,6 +22,7 @@
        <v-text-field mt-20
             v-model="password"
             label="Contraseña"
+            :rules ="rules.password"
           ></v-text-field>
       </v-col>
       </v-row>
@@ -29,7 +32,7 @@
   elevation="2"
   raised
   color = "green accent-3"
-
+  @click="join()"
 > INGRESAR</v-btn>
 
 <v-divider></v-divider>
@@ -42,19 +45,78 @@
 </template>
 
 <script>
+
+
+import { getUser } from "../services/users.services"
 export default {
   created() {
     this.$store.commit("SET_LAYOUT", "Interfaz_default");
   },
+  data() {
+    return{
+      correo: "",
+      password: "",
+    
+    rules : { 
+      mail: [(val) => (val || "").length > 0 || "Es necesario un correo"],
+      password: [(val) => (val || "").length >= 0 || "Este campo no debe de estar vacio"],
+        
+        }
+    }
+  },
   
-  methods :{
+  methods: {
 
-    GoRegister(){
+    join(){
+
+      const correo = this.correo;
+      const password =  this.password;
+      const roles = ["Soy proveedor", "Soy Agricultor"];
+      console.log(correo + password)
+
+       if( !!correo  && !!password){
+      getUser(correo.trim())
+      .then((response) => {
+        const user = response.data;
+        if(user != null ){
+          if(password == user.password){
+            console.log(user.nombre_usuario);
+            sessionStorage.setItem("nombres_usuario",user.nombre_usuario);
+            sessionStorage.setItem("apellidos_usuario",user.apellidos);
+            sessionStorage.setItem("correo_usuario",user.correo);
+
+            sessionStorage.removeItem("inicio_sesion");
+            
+            sessionStorage.setItem("inicio_sesion", true);
+
+
+            if(user.active == roles[0]){
+              sessionStorage.setItem("rol",user.active);
+              this.$router.push(`/proveedor`);
+              this.$router.reload(`/proveedor`);
+              
+              
+            }else{
+              sessionStorage.setItem("rol",user.active);
+              this.$router.push(`/oferts`);
+              this.$router.go(0);
+            }
+            
+          }else{
+            console.log("la contraseña es incorrecta");
+          }
+        }else{
+            console.log("el correo indicado no se encuentra registrado");
+        }
+    })
+
 
     }
-  }
+  },
 
-};
+  }
+}
+
 </script>
 
 <style>

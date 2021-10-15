@@ -3,7 +3,22 @@
 
   <v-app>
     <v-navigation-drawer app v-model="drawer" absolute bottom temporary>
+      <v-list-item>
+        <v-list-item-content>
+          <v-list-item-title class="text-h6">
+           {{ nombreUsuario}}
+          </v-list-item-title>
+          <v-list-item-subtitle>
+            {{correo}}
+          </v-list-item-subtitle>
+        </v-list-item-content>
+      </v-list-item>
+      
       <v-list nav dense>
+        
+
+
+
         <v-list-item-group
           v-model="group"
           active-class="green--text text--accent-4"
@@ -27,9 +42,7 @@
 
       <v-spacer></v-spacer>
 
-      <v-btn icon>
-        <v-icon large>mdi-magnify </v-icon>
-      </v-btn>
+    
 
       <v-btn icon>
         <v-icon large>mdi-account</v-icon>
@@ -40,7 +53,8 @@
       </v-btn>
 
       <v-btn icon>
-        <v-icon large>mdi-cart-outline </v-icon>
+        <v-icon large> mdi-account-supervisor-circle-outline
+ </v-icon>
       </v-btn>
       <!-- -->
     </v-app-bar>
@@ -91,6 +105,8 @@ export default {
       { title: "Mi Perfil", icon: "mdi-account-circle", path: "/miperfil" },
   
     ],
+    nombreUsuario : sessionStorage.getItem("nombres_usuario") + " " +sessionStorage.getItem("apellidos_usuario") ,
+    correo : sessionStorage.getItem("correo_usuario"),
   }),
 
   watch: {

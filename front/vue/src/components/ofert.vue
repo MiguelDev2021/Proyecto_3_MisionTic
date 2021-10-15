@@ -1,5 +1,5 @@
 <template>
-   <v-card 
+   <v-card
     :loading="loading"
     class="my-12"
     max-width="501"
@@ -54,8 +54,8 @@
       <v-btn
         color="deep-purple lighten-2"
         text
-        @click="reserve"
-        to="ofert" link
+        @click="reserve(ofert.code)"
+       
       >
         Reserve
       </v-btn>
@@ -66,7 +66,8 @@
 <script>
 export default {
     props: [
-        "ofert"
+        "ofert",
+        "code"
     ],
   data() {
     return {
@@ -78,10 +79,13 @@ export default {
   },
 
   methods: {
-    reserve() {
+    reserve(code) {
       this.loading = true;
 
       setTimeout(() => (this.loading = false), 2000);
+
+      this.$router.push(`/oferts/${code}`)
+      
     },
   },
 };

@@ -84,16 +84,22 @@
 
 
 <script>
+ 
 
 export default {
 
+   
  
   created () {
             this.$store.commit('SET_LAYOUT', 'Interfaz_default')
         },
 
     recargar_pagina(){
-        this.$router.reload();
+        this.$router.go(0);
+    },
+
+    data(){
+        sessionStorage.setItem("inicio_sesion", false);
     }
     
 }

@@ -16,14 +16,20 @@ module.exports = class ofertsController {
     }
 
     static async getById(req, res) {
-        const code = req.params.code;
+        const id = req.params.code;
         try{
-            const ofert =  await ofertsModel.findOne({"code" :  code});
+           
+            const ofert =  await ofertsModel.findOne({"code" :  id});
+            if(id != null){
             res.status(200).json(ofert);
+            }else{
+                res.status(404).json(ofert);
+            }
             }catch (err){
                 res.status(400).json({message : err.message})
             }
-        res.status(200).json();
+    
+            
     }
 
     static async Create(req, res) {
@@ -66,4 +72,13 @@ module.exports = class ofertsController {
         res.status(200).json();
     }
 
+    static async Count(req, res) {
+
+        try{
+        const oferts =  await ofertsModel.find().count();
+        res.status(200).json(oferts);
+        }catch (err){
+            res.status(400).json({message : err.message})
+        }
+    }
 }

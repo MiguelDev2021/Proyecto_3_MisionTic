@@ -4,14 +4,10 @@
       <v-form class="formulario">
         <p>REGISTRAR NUEVA OFERTA</p>
         <v-container>
+          
+        
 
-          <v-text-field
-            v-model="code"
-            :rules="[rules.required]"
-            hint="Este campo es obligatorio"
-            label="Codgio oferta"
-          ></v-text-field>
-
+         
 
           <v-text-field
             v-model="nombre_oferta"
@@ -57,18 +53,50 @@
         </v-container>
       </v-form>
     </div>
+      <Succesful 
+      :mensaje="Succesful" 
+      :snackbar="Succesfulshow"> 
+      </Succesful>
+      <Error 
+      :mensaje="error"
+      :snackbar="errorfull"
+      >
+      </Error>   
   </v-container>
+
 </template>
 
 <script>
 import { insertOfert } from "../services/oferts.services" 
+import { getAllOferts } from "../services/oferts.services"
+import Succesful from "../components/Succesful.vue"
+import Error from "../components/Error.vue"
+
+
 export default {
+    inject : ['reload'],
+   mounted(){
+    getAllOferts()
+    .then((response) =>{
+      this.oferts = response.data 
+      this.code = this.oferts.length;
+
+    })
+    .catch((err) => console.error(err));
+
+
+  },
+
+  components: {
+    Succesful,
+    Error,  
+  },
   created() {
     this.$store.commit("SET_LAYOUT", "Interfaz_Proveedor");
+    
   },
 
   data () {
-   
     return{
     code : 0,
     nombre_oferta : "",
@@ -76,6 +104,11 @@ export default {
     fecha  : "",
     informacion : "",
     Categoria : "",
+    Succesful : "",
+    Succesfulshow: "",
+    error: "",
+    errorfull: "",
+    oferts: [],
 
     items : ["Papa", "Tomate", "Cebolla"],
     rules: {
@@ -89,9 +122,25 @@ export default {
    
   
   methods: {
+
+    
     guardar(){
+
+      if(
+      this.nombre_oferta == undefined || this.nombre_oferta==""||
+      this.fecha == undefined || this.fecha==""||
+      this.informacion == undefined || this.informacion==""||
+      this.Categoria == undefined || this.Categoria==""
+      ){
+        this.MensajeError("los campos deben estar completos");
+        return;
+
+
+      }
+    
+      
       const ofert = {
-        code : this.code,
+        code : this.code + 1,
         nombre_oferta: this.nombre_oferta,
         cantidad:  this.cantidad,
         fecha: this.fecha,
@@ -101,11 +150,26 @@ export default {
       }
     insertOfert(ofert)
     .then((response) => {
-      console.log("se ha creao el producto : " + response);
+      console.log(response)
+     
+      this.MensajeAgregadoCorrectamente( "se ha creado existosamente el producto");
     }).catch((err) => console.error(err))
-    }
+      this.MensajeError("el producto no ha sido creado correctamente")
+    },
 
-  }
+    MensajeError(mensaje){
+      this.error = mensaje;
+      this.errorfull = true;
+       location.reload()
+    },
+
+   MensajeAgregadoCorrectamente(mensaje){
+      this.Succesful = mensaje;
+      this.Succesfulshow = true;
+    },
+    
+
+  },
 
 };
 </script>
