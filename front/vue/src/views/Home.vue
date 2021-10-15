@@ -19,6 +19,7 @@
         </div>
         <br>
     </v-container>
+    <br><br><br>
     <div id="seleccion">
         <p><b>Selecciona un usuario</b></p>
     </div>
@@ -34,16 +35,21 @@
         </ul>
         <br>
         <div class="imagen">
-            <img  src="https://i1.wp.com/easyfood.es/wp-content/uploads/2020/03/Los-tiempos-de-reparto-son-importantes-para-escoger-distribuidor.png?resize=800%2C400&ssl=1"
+            <img  class="bordes" src="https://farm2.staticflickr.com/1660/25826377270_01b25fb4d7_z.jpg"
                 width="400" height="200" alt="Distribuidor">
         </div>
         <br><br>
+        <center>
         <v-btn id="boton-distribuidor"
         outlined
         rounded
-         plain
+        plain
+        to ="/oferts" link
+
+         
          
         > Soy Distribuidor</v-btn>
+        </center>
         <br>
     </div>
     <div id="productor">
@@ -56,15 +62,21 @@
             </ul>
         </div>
         <div class="imagen">
-            <img src="https://www.cordobabn.com/media/cordobabn/images/2020/01/21/tecnicas-cultivos-ecologicos-660x400.jpg"
+            <img  class="bordes" src="https://www.cordobabn.com/media/cordobabn/images/2020/01/21/tecnicas-cultivos-ecologicos-660x400.jpg"
                 width="400" height="200" alt="productor">
         </div>
         <br><br>
 
-        <div class="caja-boton">
-            <a href="#" class="boton"> Soy productor agricola</a>
-        </div>
-
+        <center>
+        <v-btn id="boton-distribuidor"
+        outlined
+        rounded
+        plain
+        to="/login" link
+         
+         
+        > Soy Productor Agricola</v-btn>
+        </center>
     </div>
   </v-container>
 </template>
@@ -129,6 +141,8 @@ h3{
     text-align: left;
     float:left;
     left: 200px;
+    font-size: 17px;
+    
 }
 #productor{
     position: relative;
@@ -138,6 +152,7 @@ h3{
     font-family: 'Courier New', Courier, monospace;
     text-align: left;
     float: left;
+    font-size: 17px;
     
     
     
@@ -148,6 +163,13 @@ h3{
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    text-align:center;
+    margin: 0.5px 350px;
+    background-color: #a88205ce;
+    font-style:italic;
+    font-size: 25px;
+    font-family: 'Courier New', Courier, monospace;
+    color:black
 }
 .boton{
     
@@ -167,9 +189,14 @@ h3{
 .imagen{
     text-align: center;
 }
+.bordes{
+    border-radius: 50%;
+    margin-right: auto;
+    margin-left: auto;
+}
 
 #boton-distribuidor:hover{
-    background: #038603;
+    background: #1fa11f;
     text-align: center;
 }
 
