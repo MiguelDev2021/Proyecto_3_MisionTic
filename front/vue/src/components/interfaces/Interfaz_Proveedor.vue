@@ -42,9 +42,7 @@
 
       <v-spacer></v-spacer>
 
-      <v-btn icon>
-        <v-icon large>mdi-magnify </v-icon>
-      </v-btn>
+    
 
       <v-btn icon>
         <v-icon large>mdi-account</v-icon>
@@ -55,7 +53,8 @@
       </v-btn>
 
       <v-btn icon>
-        <v-icon large>mdi-cart-outline </v-icon>
+        <v-icon large> mdi-account-supervisor-circle-outline
+ </v-icon>
       </v-btn>
       <!-- -->
     </v-app-bar>
@@ -107,6 +106,7 @@ export default {
   
     ],
     nombreUsuario : sessionStorage.getItem("nombres_usuario") + " " +sessionStorage.getItem("apellidos_usuario") ,
+    correo : sessionStorage.getItem("correo_usuario"),
   }),
 
   watch: {

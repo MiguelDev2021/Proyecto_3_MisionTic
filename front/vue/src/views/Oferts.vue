@@ -38,7 +38,9 @@ export default {
     };
 
   },
-  
+   recargar_pagina(){
+        location.reload();
+    },
   mounted(){
    
     getAllOferts()

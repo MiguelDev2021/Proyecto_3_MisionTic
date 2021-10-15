@@ -84,6 +84,12 @@ export default {
             sessionStorage.setItem("nombres_usuario",user.nombre_usuario);
             sessionStorage.setItem("apellidos_usuario",user.apellidos);
             sessionStorage.setItem("correo_usuario",user.correo);
+
+            sessionStorage.removeItem("inicio_sesion");
+            
+            sessionStorage.setItem("inicio_sesion", true);
+
+
             if(user.active == roles[0]){
               sessionStorage.setItem("rol",user.active);
               this.$router.push(`/proveedor`);
