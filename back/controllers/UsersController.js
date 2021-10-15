@@ -17,11 +17,11 @@ module.exports = class ofertsController {
     }
 
     static async getById(req, res) {
-        const id = req.params.code;
+        const correo = req.params.correo;
         try{
            
-            const user =  await usersModel.findOne({"code" :  id});
-            if(id != null){
+            const user =  await usersModel.findOne({"correo" :  correo});
+            if(correo != null){
             res.status(200).json(user);
             }else{
                 res.status(404).json(user);

@@ -16,5 +16,6 @@ router.get("/oferts/code", ofertsController.Count);
 
 // rutas usuarios 
 router.post("/register", UsersController.Create);
+router.get("/login/:correo", UsersController.getById);
 
 module.exports = router;

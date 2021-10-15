@@ -180,11 +180,10 @@ export default {
             console.log(response);
 
             this.MensajeAgregadoCorrectamente(
-              "se ha creado existosamente el producto"
+              "se ha registrado exisotosamente"
             );
           })
           .catch((err) => console.error(err));
-        this.MensajeError("el producto no ha sido creado correctamente");
       } else {
         this.MensajeError("las contraseñas no coinciden");
       }
